@@ -486,8 +486,8 @@ fill="#ffffff" stroke="none">
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Gerardo Escoto & Matthew Flowerhill</h1></header><meta itemprop="headline" content="Gerardo Escoto & Matthew Flowerhill"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 26, 2026</span>
-            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-26T19:05:31-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
+<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Gerardo Escoto & Matthew Flowerhill</h1></header><meta itemprop="headline" content="Gerardo Escoto & Matthew Flowerhill"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 27, 2026</span>
+            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-27T10:59:09-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
 <!-- <script src="https://cdn.tailwindcss.com/3.0.0"></script> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -581,7 +581,7 @@ fill="#ffffff" stroke="none">
           
           <!-- <p> -->
           <article class="prose lg:prose-xl">
-          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/editai_internship/people/">Gerardo Escoto</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">Matthew Flowerhill</a></p>
+          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/edit-ai-internship/people/">Gerardo Escoto</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/">Matthew Flowerhill</a></p>
 
 <p><strong>Program Track:</strong> Skills Development</p>
 
@@ -608,6 +608,116 @@ fill="#ffffff" stroke="none">
 
 <p>My summer internship experience can be described as a very extensive learning experience, as I learned valuable skills from amazing mentors that helped me with my work.
 <em>-Matthew Flowerhill</em></p>
+
+<h2>Blog Post</h2>
+<p><br />
+Gerardo Escoto</p>
+
+<p>Matthew Flowerhill</p>
+
+<p>25 August 2026</p>
+
+<p><strong>Self-Supervised Learning and Active Learning Pipeline for Cervical
+Cytology Clustering</strong></p>
+
+<p><strong>Introduction</strong></p>
+
+<p>Cervical cancer remains a major global health challenge, with the
+greatest burden occurring in low- and middle-income countries where
+access to vaccination, screening, and treatment is often limited. These
+disparities highlight the need for more accessible and efficient
+approaches to cervical cancer screening. Our project explores how
+artificial intelligence and digital cytology can help address this
+challenge by organizing cervical cells based on their visual
+characteristics and prioritizing potentially informative cells for
+expert review.</p>
+
+<p><strong>Background</strong></p>
+
+<p>Honduras faces significant challenges in cervical cancer prevention,
+screening, and treatment. Cervical cancer is the leading cause of
+cancer-related death among Honduran women ages 15–44, with
+approximately 858 new cases and 518 deaths each year. Limited access to
+trained pathologists and the centralization of healthcare services can
+create major bottlenecks in diagnosis and treatment, with reported
+treatment delays reaching approximately 232 days. Poverty and geographic
+isolation can further restrict access to routine screening, particularly
+for women living in rural communities.</p>
+
+<p>Traditional cervical cancer screening methods can also be difficult to
+implement effectively in low-resource settings. Pap smears require
+trained personnel and laboratory infrastructure, while visual inspection
+methods can produce high rates of false-positive results. HPV testing
+can identify individuals at increased risk, but positive results still
+require additional evaluation and triage. These limitations create an
+opportunity for digital cytology and computational tools to help
+organize large amounts of cervical cell data and support a more
+efficient expert review process.</p>
+
+<p><strong>Methodology</strong></p>
+
+<p>To address these challenges, we developed a computational pipeline using
+digital cervical cytology whole-slide images from La Liga Medical Center
+in Honduras. The pipeline begins by using a YOLO-based model to detect
+and segment individual cells from each image. A quality-control step
+then evaluates the detected cells using model confidence and
+morphological characteristics, such as cell shape and size, to help
+filter out artifacts and unreliable detections.</p>
+
+<p>The remaining cells are analyzed using CytoFM, a Vision Transformer
+trained through self-supervised learning. This approach allows the model
+to learn meaningful features of cellular morphology without requiring
+every cell to be manually labeled. These learned representations are
+then used to group morphologically similar cells through k-nearest
+neighbor graph construction and Leiden clustering. Finally, an
+active-learning system scores cells based on uncertainty, rarity, and
+diversity, creating a prioritized review queue designed to direct expert
+attention toward potentially informative cells.</p>
+
+<p><strong>Analysis/Results</strong></p>
+
+<p><img src="media/image1.png" alt="" />{width=”6.5in” height=”5.791666666666667in”}</p>
+
+<p>The pipeline successfully organized cervical cell images into distinct
+groups based on their learned morphological features. When the cell
+representations were visualized using UMAP, clear groupings appeared
+across the dataset, suggesting that the model was able to capture
+meaningful differences in cell morphology. Silhouette scores were also
+used to evaluate the quality of these clusters by measuring how closely
+cells within the same cluster were grouped compared with cells in other
+clusters.</p>
+
+<p>The active-learning component further improved the efficiency of the
+review process by changing which cells were prioritized for expert
+evaluation. Rather than selecting large numbers of cells from common and
+repetitive clusters, the system reduced their representation and placed
+greater emphasis on rare, uncertain, or underrepresented groups. This
+created a more balanced review queue designed to maximize the amount of
+useful information presented to an expert.</p>
+
+<p><strong>Conclusion</strong></p>
+
+<p>Overall, this project demonstrates the potential of combining
+self-supervised learning, cell clustering, and active learning to
+support large-scale cervical cytology analysis. The developed pipeline
+can process cervical cell images, learn important morphological features
+without relying on extensive manual annotations, and organize cells into
+distinct groups. By prioritizing rare, uncertain, and diverse cells for
+expert review, the approach may help reduce repetitive manual review and
+allow specialists to focus their attention on potentially more
+informative cells.</p>
+
+<p>Future work will focus on further fine-tuning the Vision Transformer to
+improve its ability to represent cervical cell morphology and improving
+the YOLO model's accuracy in distinguishing true cells from imaging
+artifacts. The dataset will also be expanded to include cervical
+cytology images from additional hospitals and clinical settings.
+Increasing the diversity of the data will be important for evaluating
+how well the pipeline generalizes across differences in staining,
+imaging conditions, and patient populations. With continued development
+and validation, this work provides a foundation for more scalable and
+efficient digital cytology workflows, particularly in settings where
+access to trained specialists is limited.</p>
 
 
           </article>

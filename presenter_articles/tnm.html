@@ -486,8 +486,8 @@ fill="#ffffff" stroke="none">
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Shrey Shah, Shreyas Kalidindi & Daniel Gabriel</h1></header><meta itemprop="headline" content="Shrey Shah, Shreyas Kalidindi & Daniel Gabriel"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 26, 2026</span>
-            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-26T19:05:31-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
+<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Shrey Shah, Shreyas Kalidindi & Daniel Gabriel</h1></header><meta itemprop="headline" content="Shrey Shah, Shreyas Kalidindi & Daniel Gabriel"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 27, 2026</span>
+            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-27T10:59:09-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
 <!-- <script src="https://cdn.tailwindcss.com/3.0.0"></script> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -581,7 +581,7 @@ fill="#ffffff" stroke="none">
           
           <!-- <p> -->
           <article class="prose lg:prose-xl">
-          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/editai_internship/people/">Shrey Shah</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">Shreyas Kalidindi</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">Daniel Gabriel</a></p>
+          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Shrey_Shah-2026">Shrey Shah</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Shreyas_Kalidindi-2026">Shreyas Kalidindi</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Daniel_Gabriel-2026">Daniel Gabriel</a></p>
 
 <p><strong>Program Track:</strong> Skills Development</p>
 
@@ -617,6 +617,146 @@ fill="#ffffff" stroke="none">
 
 <p>Using coding and AI to contribute to real clinical research while learning the skills needed to do it
 <em>-Daniel Gabriel</em></p>
+
+<h2>Blog Post</h2>
+<p><br />
+<strong>[Using NLP to Read Pathology Reports]{.underline}</strong></p>
+
+<p>By Shrey Shah, Shreyas Kalidindi, Daniel Gabriel</p>
+
+<p><strong>The problem</strong></p>
+
+<p>There exists a pathology report for every diagnosis of cancer. It is a
+highly technical document where a pathologist describes the appearance
+of a tumor under the microscope: its type, size, extent of spread. These
+reports contain a great deal of the most valuable information in the
+medical record, but are written in a technical language that is
+challenging to search and analyze at any scale. This summer, we asked
+ourselves a single question: how well could modern AI handle these
+reports and extract meaningful information?</p>
+
+<p>The data used in our research was TCGA-Reports, a publicly available
+dataset consisting of about 9,500 de-identified pathology reports from
+The Cancer Genome Atlas. We aimed to design systems that could interpret
+the raw text and provide two pieces of information: type of cancer
+described in the report and tumor stage according to the standardized
+TNM staging system. (TNM staging involves dividing the stage into three
+categories: T, describing the size of the primary tumor, N, indicating
+if it has spread to lymph nodes, and M, if it has spread distantly.)</p>
+
+<p><strong>Our approach: three phases, each bringing increasing sophistication</strong></p>
+
+<p>We did not opt for designing the most sophisticated model right away,
+opting instead for an approach that would enable us to assess the gains
+and the limits of increased sophistication.</p>
+
+<p><img src="media/image2.png" alt="" />{width=”5.015625546806649in”
+height=”1.88291447944007in”}</p>
+
+<p><strong>Phase 1: Traditional NLP.</strong> At first, we approached the problem with
+traditional methods. The core of this approach lies in using TF-IDF
+technique, which represents documents through which words it uses and
+their distinctiveness, followed by training classifiers. This step was
+designed to serve as a baseline for our experiments, yet it ended up
+setting a surprisingly high bar.</p>
+
+<p><strong>Phase 2: Transformer models (BERT).</strong></p>
+
+<p>Next, we fine-tuned BERT-type models pre-trained on biomedical and
+clinical text. These models have a much better understanding of the
+nuances of medical language thanks to being context-aware, unlike simple
+word counting methods.</p>
+
+<p><strong>Phase 3: Large language models.</strong></p>
+
+<p>Lastly, we used a prompt-based approach with a medical large language
+model. This approach implies prompting a model of general-purpose AI,
+such as the one powering modern chat assistants. Our goal was to
+estimate the performance of the system on these tasks without any
+task-specific training.</p>
+
+<p><strong>Our findings</strong></p>
+
+<p><strong>We had a fairly decent solution to classifying cancer type.</strong> Our
+best-performing traditional model achieved a macro-F1 of 0.97 and 97.5%
+accuracy. (The macro-F1 is a metric with values from 0 to 1. As opposed
+to simple accuracy, it gives equal weight to rare and common cancers,
+thus preventing a model from getting high scores simply by guessing
+common cancers correctly.) What came as a surprise, though, is that the
+much more complex BERT model achieved the same score of about 0.97. The
+baseline approach of counting words had already accounted for nearly all
+of the possible nuances. There was also a gradient-boosted approach
+which scored slightly higher in theory but was discarded due to
+overfitting: it achieved a perfect score in its training set and was
+much slower. Choosing a simpler model is an example of such decisions
+that appear all the time in the field of machine learning.</p>
+
+<p><strong>Classifying cancer staging turned out to be a challenge.</strong> Even though
+we used the same models, none of them was able to classify T/N/M stage
+as accurately as they classified the cancer type. The best model,
+PubMedBERT, fell far below its previous score, and the three stages of
+the process were not equally difficult:</p>
+
+<p><img src="media/image1.png" alt="" />{width=”5.005208880139983in”
+height=”0.8903499562554681in”}</p>
+
+<p>Why is the staging process harder than cancer type classification? First
+of all, the cancer type is always mentioned in the report explicitly,
+whereas hints for the stage may be found all throughout the text. Tumor
+size, depth of tumor invasion, number of lymph nodes involved. In some
+cases, the stage itself is implied, not explicitly stated. We also
+decided to try another model named Clinical-BigBird, since it seemed
+that our other models were losing information by splitting long reports.
+The model could process much more of each report. Ultimately, the
+improvement did not seem worth the cost in computation resources, so we
+stuck to</p>
+
+<p>our traditional models. This was yet another lesson – sometimes it is
+not true that the more expensive tool does its job better. The
+text-based staging is a difficult task, and our numbers show that.</p>
+
+<p><strong>The largest model wasn’t the best.</strong> This is where the biggest
+surprise came from. The large language model was clearly the most
+powerful system among those we compared, and still lost to both of the
+other two approaches on both tasks. It achieved only macro-F1 of around
+0.39 on T-staging and 0.54 on cancer type classification. Additionally,
+it sometimes refused to commit to one of the possible classifications,
+leaving up to a quarter of answers unmatched with any of the valid stage
+codes. Moreover, giving it some examples of how the question should be
+answered ("few-shot" prompting) even worsened the performance of the
+model. The conclusion that can be drawn here is that bigger and more
+general isn't always better. In case of narrow and well-defined
+classification tasks, a specialized model usually beats the general one.</p>
+
+<p>[What we've learned]{.underline}</p>
+
+<p>The scores are important, but the main lessons were actually learned
+during the process. Most of machine learning is doing the boring and
+routine things which aren't presented on the slides. Cleaning up the
+messy data, hunting the bugs which don't say what they are, checking
+whether the promising result is actually correct: most of machine
+learning consists of such things. The most helpful findings for us were
+the ones where something did not work and why. Learning what does not
+work and why turned out to be as important as discovering something that
+works.</p>
+
+<p>[Where this is headed]{.underline}</p>
+
+<p>The main thing that we learned during this project is that the textual
+content of the pathology report contains useful information for
+diagnosis. The next step from there is using not only the report text,
+but also the information from tumor images and genomic analysis to check
+whether the combination of the three methods gives better prediction of
+patient outcomes. NLP research from this summer is going to become both
+a starting point and a baseline for this project.</p>
+
+<p><strong>In plain terms</strong></p>
+
+<p><em>We have taught computers how to analyze cancer reports on cancer
+diagnosis and extract vital medical information. They did a terrific job
+identifying the type of cancer but found it much more difficult to stage
+it. Moreover, it was clear that the most advanced AI was not necessarily
+the best one for this task.</em></p>
 
 
           </article>

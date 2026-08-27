@@ -486,8 +486,8 @@ fill="#ffffff" stroke="none">
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Ameya Rajeev, Abhinav Kakkera, Aqib Nawaz Shaik, Gagan Girish, David Ahn & Joycelyn Cheng</h1></header><meta itemprop="headline" content="Ameya Rajeev, Abhinav Kakkera, Aqib Nawaz Shaik, Gagan Girish, David Ahn & Joycelyn Cheng"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 26, 2026</span>
-            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-26T19:05:31-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
+<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Ameya Rajeev, Abhinav Kakkera, Aqib Nawaz Shaik, Gagan Girish, David Ahn & Joycelyn Cheng</h1></header><meta itemprop="headline" content="Ameya Rajeev, Abhinav Kakkera, Aqib Nawaz Shaik, Gagan Girish, David Ahn & Joycelyn Cheng"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 27, 2026</span>
+            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-27T10:59:09-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
 <!-- <script src="https://cdn.tailwindcss.com/3.0.0"></script> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -581,7 +581,7 @@ fill="#ffffff" stroke="none">
           
           <!-- <p> -->
           <article class="prose lg:prose-xl">
-          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/editai_internship/people/">Ameya Rajeev</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">Abhinav Kakkera</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">Aqib Nawaz Shaik</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">Gagan Girish</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">David Ahn</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">Joycelyn Cheng</a></p>
+          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Ameya_Rajeev-2026">Ameya Rajeev</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Abhinav_Kakkera-2026">Abhinav Kakkera</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Aqib_Nawaz_Shaik-2026">Aqib Nawaz Shaik</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Gagan_Girish-2026">Gagan Girish</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_David_Ahn-2026">David Ahn</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Joycelyn_Cheng-2026">Joycelyn Cheng</a></p>
 
 <p><strong>Program Track:</strong> Skills Development</p>
 
@@ -644,6 +644,184 @@ fill="#ffffff" stroke="none">
 
 <p>I thought my summer internship experience was fun and insightful, I was able to collaborate and meet with high schoolers across the country and was able to learn a lot from my project and the seminars.
 <em>-Joycelyn Cheng</em></p>
+
+<h2>Blog Post</h2>
+<p><br />
+<strong>Team 6 2026</strong></p>
+
+<p><strong>Skills Development Track</strong></p>
+
+<p><strong>Automated Bladder Cancer Screening with Deep Learning Algorithms</strong></p>
+
+<p>Ameya Rajeev, Gagan Girish, Aqib Nawaz Shaik, Abhi Kakkera, David Ahn,
+Joycelyn Cheng</p>
+
+<p><strong>I. Introduction</strong></p>
+
+<p>Bladder cancer is the most common type of cancer found in the urinary
+tract, with approximately 74,000 new cases diagnosed annually in the
+United States [1]. Bladder cancer also has some of the highest
+recurrence rates of any cancer and requires lifelong monitoring and</p>
+
+<p>screening [2]. An important indicator used in bladder cancer screening
+is the nuclear to cytoplasmic ratio, as cancerous cells have an
+increased nuclear size [3]. Manual screening of urine cytology
+specimens is time-consuming and laborious. Additionally, mixed cell
+types, debris, and variable stain/focus make boundaries unclear. This
+causes inconsistent N/C ratio estimates which hurts reproducibility.
+Here, we propose training a deep learning image segmentation model
+called U-Net, to segment the nucleus and cytoplasm while also computing
+the per cell N/C ratio. We benchmarked U-Net against interpretable
+segmentation baselines, including Otsu thresholding, and compared the
+resulting per-cell N/C ratio distributions across four diagnostic
+categories: negative, atypical, positive, and suspicious. Although
+models were evaluated on a limited dataset, the findings demonstrate the
+potential of automated image segmentation to generate objective and
+reproducible N/C ratio measurements in urine cytology.</p>
+
+<p><strong>II. Methods</strong></p>
+
+<p>1. <strong>Urothelial Cell Dataset</strong></p>
+
+<p><strong>Cell Images</strong>: Use a pickle dataset containing 200+ urothelial cell
+images with ground-truth segmentation masks for the nucleus and
+cytoplasm.</p>
+
+<p><strong>Specimen Dataset</strong>: Analyze approximately 25 cells per patient with
+associated diagnostic categories to evaluate the N/C ratio as a
+potential biomarker.</p>
+
+<p>2. <strong>Image Segmentation</strong>:</p>
+
+<p><strong>Otsu Thresholding</strong>: Applies multi-level, intensity-based thresholding
+as a traditional segmentation approach that does not require training.</p>
+
+<p><strong>UNET</strong>: Train a UNET deep learning model to automatically segment the
+nucleus and cytoplasm.</p>
+
+<p><strong>Model Evaluation</strong>: Compare segmentation results against ground-truth
+masks using metrics such as Dice coefficient and IoU.</p>
+
+<p>3. <strong>Quantitative Analysis</strong>:</p>
+
+<p><strong>N/C Ratio</strong>: Calculate the nuclear-to-cytoplasmic ratio from segmented
+cell regions.</p>
+
+<p><strong>Diagnostic Analysis</strong>: Compare N/C ratios across patient diagnostic
+categories to evaluate their predictive value for bladder cancer.</p>
+
+<p>4. <strong>Computational Tools</strong>:</p>
+
+<p><strong>Python</strong>: Use Python for data processing, image analysis, model
+development, and statistical analysis.</p>
+
+<p><strong>Libraries</strong>: Utilize PyTorch, OpenCV, NumPy, scikit-learn, and other
+image-processing libraries.</p>
+
+<p><strong>GPUs</strong>: Use GPU acceleration to train and evaluate the UNET model
+efficiently.</p>
+
+<p><strong>III. Results</strong></p>
+
+<p>UNET showed a Spearman correlation coefficient (SCC) higher than Otsu
+thresholding on our dataset, as UNET achieved a score of 0.844 compared
+to Otsu with 0.765. Additionally, UNET achieved a boxplot much more
+accurate to the ground truth plot compared to the Otsu method, as shown
+in Figure 1.</p>
+
+<p><strong>Figure. 1</strong></p>
+
+<p><img src="media/image1.png" alt="" />{width=”5.796875546806649in”
+height=”1.5712073490813647in”}</p>
+
+<p><strong>IV. Discussion</strong></p>
+
+<p>Our findings suggest that UNET has the potential for automated
+urothelial cell segmentation and N/C ratio measurement. Specifically,
+the segmentation model achieved a Spearman Correlation Coefficient of
+0.84, indicating a strong positive correlation between automated and
+manual N/C ratio measurements. This high correlation shows that UNET is
+more effective in capturing and segmenting the nucleus and the cytoplasm
+of urothelial cells than the Otsu method. This can also be seen in the
+box plots, as there is a strong overlap in medians and interquartile
+ranges between automated and manual distributions showing that the model
+prediction closely matches human annotations. Accurate segmentation is
+important because errors in identifying the nucleus or cytoplasm can
+affect N/C ratio calculations. Automated segmentation could make these
+measurements more consistent and reproducible, potentially supporting
+quantitative analysis of urine cytology. However, our results have some
+limitations. For example, our dataset was relatively small and may not
+capture the full variation in clinical urine cytology images. Also, N/C
+ratio alone may not capture the full complexity of bladder cancer
+diagnosis, which depends on multiple cellular and morphological
+features. Image quality challenges including overlapping cells, debris
+and low contrast, can also lead to segmentation errors and affect N/C
+ratio measurements. In the future using a larger and more diverse
+dataset while considering additional morphological features alongside
+N/C ratio will determine whether the model can generalize to new
+specimens.</p>
+
+<p><strong>V. What We Learned</strong></p>
+
+<p>This project taught us how U-Net's encoder-decoder structure segments
+medical images, and why skip connections matter for preserving nuclear
+boundaries. Starting from a ResNet-50 encoder pretrained on ImageNet
+allowed the model to learn effectively from only a few hundred cells,
+and combining Dice loss with cross-entropy kept the model from ignoring
+nuclei, which occupy a small fraction of the pixels in each image. We
+also learned how much a simple baseline contributes. Otsu thresholding
+reached a mean Dice coefficient of 75.7% but produced no nuclear
+segmentation in 9 of 200 cells, because it separates regions purely by
+pixel intensity and breaks down on pale or heavily stained nuclei.
+Identifying that specific failure explained why the deep learning
+approach performed better, rather than leaving us to simply assert that
+it did, and it changed how we think about baselines: they are diagnostic
+tools that reveal what a model actually needs to handle, not just
+numbers to beat. Finally, we learned that accurate segmentation is only
+half the problem. Converting per-cell masks into N/C ratios and
+comparing them across diagnostic categories showed us what it takes for
+a model output to become a candidate biomarker, and working with roughly
+200 training cells taught us to interpret our own results cautiously,
+since strong performance on a small dataset does not establish that a
+model will generalize to new specimens.</p>
+
+<p><strong>VI. Conclusion</strong></p>
+
+<p>During our time working on this project, we fulfilled the objective of
+learning more about automated bladder cancer screening by using deep
+learning algorithms and traditional methods to combat automated
+diagnosis. By comparing the success rate of segmentation using both
+Otsu’s method and UNET we managed to learn more about how both
+segmentations work and their strengths and weaknesses. We learned that
+UNET had higher segmentation accuracy than Otsu’s Method for urothelial
+cell segmentation, where UNET had an SCC of 0.844 while Otsu’s method
+had an SCC of 0.765. Having an accurate segmentation model would allow
+us to quickly calculate the N/C ratio for accurate diagnosis. The N/C
+ratio we obtain has potential to be used for automated bladder cancer
+screening. There is room for improvement as if we had a larger and more
+diverse dataset, we could validate the approach and improve reliability.
+In the future we hope to address these limitations by expanding and
+augmenting on the dataset, doing so to improve the accuracy metrics of
+our models.</p>
+
+<p><strong>VII. References</strong></p>
+
+<p>[1]: Kamat AM, Hahn NM, Efstathiou JA, Lerner SP, Malmström P-U, Choi
+W, Guo CC, Lotan Y, Kassouf W, Bladder cancer, The Lancet, 2016 Dec 3,</p>
+
+<p><a href="https://doi.org/10.1016/S0140-6736(16)30512-8">[https://doi.org/10.1016/S0140-6736(16)30512-8]{.underline}</a></p>
+
+<p>[2]: Dyrskjøt L, Hansel DE, Efstathiou JA, Knowles MA, Galsky MD, Teoh
+J, Theodorescu D, Bladder cancer, Nature Reviews Disease Primers, 2023,</p>
+
+<p><a href="https://doi.org/10.1038/s41572-023-00468-9">[https://doi.org/10.1038/s41572-023-00468-9]{.underline}</a></p>
+
+<p>[3]: Bisharah S, Raap M, Abbas M, Urine Cytological Diagnostics:
+Possibilities and</p>
+
+<p>Limitations—A 25-Year Review and Overview at Hannover Medical School,
+Clinical Practice, 2025,
+<a href="https://doi.org/10.3390/clinpract15120234">[https://doi.org/10.3390/clinpract15120234]{.underline}</a></p>
 
 
           </article>

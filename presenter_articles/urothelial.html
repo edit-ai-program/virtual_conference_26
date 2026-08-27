@@ -486,8 +486,8 @@ fill="#ffffff" stroke="none">
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Siddhartha Vatsa & Joshua Wang</h1></header><meta itemprop="headline" content="Siddhartha Vatsa & Joshua Wang"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 26, 2026</span>
-            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-26T19:05:31-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
+<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Siddhartha Vatsa & Joshua Wang</h1></header><meta itemprop="headline" content="Siddhartha Vatsa & Joshua Wang"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 27, 2026</span>
+            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-27T10:59:09-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
 <!-- <script src="https://cdn.tailwindcss.com/3.0.0"></script> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -581,7 +581,7 @@ fill="#ffffff" stroke="none">
           
           <!-- <p> -->
           <article class="prose lg:prose-xl">
-          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/editai_internship/people/">Siddhartha Vatsa</a>,<a href="https://edit-ai-program.github.io/editai_internship/people/">Joshua Wang</a></p>
+          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Siddhartha_Vatsa-2026">Siddhartha Vatsa</a>,<a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Joshua_Wang-2026">Joshua Wang</a></p>
 
 <p><strong>Program Track:</strong> Skills Development</p>
 
@@ -608,6 +608,163 @@ fill="#ffffff" stroke="none">
 
 <p>Amazing learning experience that allowed me to gain insight into the research process and apply machine learning to an impactful project.
 <em>-Joshua Wang</em></p>
+
+<h2>Blog Post</h2>
+<p><br />
+EDIT AI Skills Track Blog Post</p>
+
+<p>Contributors: Siddhartha Vatsa, Joshua Wang</p>
+
+<p><strong>Intro</strong></p>
+
+<p>Bladder cancer is the 9th most common cancer worldwide and has very high
+recurrence rates, making early detection essential for preventing
+disease progression. One common non-invasive screening method is urine
+cytology, where pathologists examine cells under a microscope for signs
+of cancer. While effective, this process is time-consuming and can vary
+between pathologists, leading to inconsistent diagnoses. In this
+project, we explored whether machine learning and deep learning methods
+could improve the consistency, efficiency, and accuracy of bladder
+cancer screening.</p>
+
+<p><strong>Methodology</strong></p>
+
+<p>Our approach consisted of two stages: first segmenting each urine cell
+image into nucleus, cytoplasm, and background, then using the produced
+segmentation mask to classify each cell into one of four ordered
+diagnostic categories: negative, atypical, suspicious, or positive.
+Initially, we evaluated how well multi-Otsu thresholding performed on
+segmentation. After segmenting each image, we used the resulting masks
+to calculate a nucleus-cytoplasmic ($\frac{N}{(N + C)}$) ratio and
+intersection-over-union (IoU) scores to provide a baseline against U-Net
+segmentation.</p>
+
+<ul>
+  <li>
+    <p>Preprocessing was required: Otsu thresholding works best on simple
+histograms, so we grayscaled each image and set the intensity range to
+[0,1] instead of [0,255] for more streamlined results.</p>
+  </li>
+  <li>
+    <p>Performing classification of cells on the specimen cell dataset was
+tricky: due to different staining/contrast issues, we performed
+per-image normalization on each cell from the data as it was being
+evaluated.</p>
+  </li>
+  <li>
+    <p>Various methods of thresholding were attempted, such as
+fixed-adjustment and Optuna-optimized thresholding, finally landing on
+multi-Otsu due to its efficiency.</p>
+  </li>
+</ul>
+
+<p>In the proposed machine learning pipeline, we segmented nucleus,
+cytoplasm, and background in urothelial cells with a U-Net, then
+extracted 5 clinical features: N/C ratio, circularity, solidity, nucleus
+area, and cytoplasm area. Based on these features, we used a Support
+Vector Machine to classify cells into one of four diagnostic categories.</p>
+
+<p><strong>Results</strong></p>
+
+<p>We first evaluated segmentation performance. Multi-Otsu thresholding
+achieved a segmentation accuracy of 0.91, although nucleus detection was
+its biggest weakness as only 32% of nucleus pixels were correctly
+identified (recall = 0.32). This can be attributed to the Otsu equation
+often over-estimating the threshold for the nucleus-cytoplasm border.</p>
+
+<p>To evaluate the U-Net’s segmentation performance, we compared its
+results against multi-Otsu thresholding. We found that the U-Net
+produced significantly stronger results, with a 0.846 segmentation IoU
+and a pixel wise accuracy of 0.92.</p>
+
+<p>For classification, applying fixed cutpoints to the N/C ratio derived
+from the multi-Otsu segmentation gave us a baseline accuracy of 0.50. To
+find the best classifier for the extracted features, we evaluated three
+models: Ordinal Regression, Random Forest, and Support Vector Machine.</p>
+
+<ul>
+  <li>
+    <p>Ordinal Regression achieved an accuracy of 55% but struggled because
+it separates categories using rigid linear decision boundaries.</p>
+  </li>
+  <li>
+    <p>Random Forest improved performance to 64% by learning more flexible
+decision rules, although it still had difficulty distinguishing
+fundamentally similar categories.</p>
+  </li>
+  <li>
+    <p>Support Vector Machine (RBF kernel) achieved the highest accuracy at
+68%. By learning curved decision boundaries, the SVM better captured
+the complex relationships between extracted cellular features and
+diagnostic categories.</p>
+  </li>
+</ul>
+
+<p>In addition to evaluating segmentation and classification accuracy, we
+also evaluated the importance of each feature through permutation
+importance (randomly shuffling values in a feature column to see how
+much the worse the model gets). The worse a model’s accuracy is after
+shuffling a feature column, the more important that feature is. We found
+that nucleus area was the most important feature.</p>
+
+<p>List of feature importance (ranked most to least important)</p>
+
+<ol>
+  <li>
+    <p>Nucleus area</p>
+  </li>
+  <li>
+    <p>Cytoplasm Area</p>
+  </li>
+  <li>
+    <p>N/C ratio</p>
+  </li>
+  <li>
+    <p>Solidity</p>
+  </li>
+  <li>
+    <p>Circularity</p>
+  </li>
+</ol>
+
+<p><strong>Discussion</strong></p>
+
+<p>The multi-Otsu baseline’s segmentation accuracy (0.91), was
+significantly inflated due to the score incorporating correct background
+identification. The individual accuracy on each category is much more
+interesting: once the threshold labels a pixel as “nucleus”, it is
+always correct (precision 1.00). However, it only finds 32% of correct
+nucleus pixels, which highlights a major issue with Otsu thresholding:
+one numerical cutoff is not substantial enough to incorporate all
+different types of cells and correctly classify each pixel within them.
+The same limitation shows up in classification, where recall ranged from
+just 20% for atypical cells to 88% for negative cells. The baseline
+reliably catches the clearest cases but struggles wherever categories
+visually overlap, which is exactly where careful classification matters
+most.</p>
+
+<p>The proposed pipeline addresses this because instead of relying on just
+one threshold like intensity values and N/C ratio for segmentation and
+classification, the U-Net directly learns to predict pixel classes and
+the SVM classifies based on 5 features, which provides higher stability
+and trustworthiness compared to just one feature. This allowed for
+enhanced segmentation (0.92 accuracy) and classification (0.68
+accuracy).</p>
+
+<p>Future improvements will likely come from training on larger datasets,
+incorporating additional informative biomarkers, and eventually
+developing an end-to-end deep learning model that directly predicts
+diagnostic categories from cell images without requiring segmentation
+and manual feature extraction.</p>
+
+<p><strong>Conclusion</strong></p>
+
+<p>Overall, the proposed U-Net + SVM pipeline consistently outperformed the
+traditional multi-Otsu baseline in segmentation quality, nucleus
+detection, and classification accuracy. These results suggest that deep
+learning and machine learning can provide a more reliable and efficient
+approach for automated urine cytology and has the potential to improve
+future bladder cancer screening systems.</p>
 
 
           </article>

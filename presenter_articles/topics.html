@@ -486,8 +486,8 @@ fill="#ffffff" stroke="none">
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Maximilian Wakefield</h1></header><meta itemprop="headline" content="Maximilian Wakefield"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 26, 2026</span>
-            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-26T19:05:31-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
+<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Maximilian Wakefield</h1></header><meta itemprop="headline" content="Maximilian Wakefield"><div class="article__info clearfix"><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 27, 2026</span>
+            </li></ul></div><meta itemprop="author" content="Your Name"/><meta itemprop="datePublished" content="2026-08-27T10:59:09-07:00"><div class="js-article-content"><!-- Tailwind CSS -->
 <!-- <script src="https://cdn.tailwindcss.com/3.0.0"></script> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -581,7 +581,7 @@ fill="#ffffff" stroke="none">
           
           <!-- <p> -->
           <article class="prose lg:prose-xl">
-          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/editai_internship/people/">Maximilian Wakefield</a></p>
+          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/edit-ai-internship/people/HS_Maximilian_Wakefield-2026">Maximilian Wakefield</a></p>
 
 <p><strong>Program Track:</strong> Skills Development</p>
 
@@ -599,6 +599,184 @@ fill="#ffffff" stroke="none">
 
 <p>The summer internship experience let me explore many different methodologies while getting to work closely with mentors across Dartmouth, whose guidance and feedback helped me develop a significant project.
 <em>-Maximilian Wakefield</em></p>
+
+<h2>Blog Post</h2>
+<p><br />
+<strong>LLM-Based Extraction of Psychosocial Risk Factors in Clinical Notes
+for Suicide-Related Risk in Cancer Patients</strong></p>
+
+<p>Author: Maximilian Wakefield</p>
+
+<p>Cancer patients face an elevated risk of suicidal ideation and
+self-harm, but a lot of the warning signs for that risk never make it
+into a diagnosis code. A doctor might write that a patient seems
+hopeless, scared, or overwhelmed by treatment, and that observation is
+only in a paragraph of free text, absent from structured EHR data. To
+make use of that psychological content, can a large language model (LLM)
+read those notes, pull out that content, and make suicide-risk
+prediction in cancer patients clinically reproducible and meaningfully
+better?</p>
+
+<h1 id="building-the-pipeline"><strong>Building the Pipeline</strong></h1>
+
+<p>I worked with MIMIC-IV, a large, de-identified database of ICU and
+emergency department records from Beth Israel Deaconess Medical Center,
+available for research use through PhysioNet. I built a cohort of 4,614
+cancer patients (769 with a documented suicide-related event and 3,845
+without a documented suicide-related event) and split their data into
+two tracks: structured EHR data (diagnoses, admissions, demographics)
+and free-text clinical notes.</p>
+
+<p>Clinical notes are long, repetitive, and full of boilerplate like lab
+values, medication lists, and discharge instructions, with the actual
+emotional content buried inside. I built a two-stage LLM pipeline using
+Qwen2.5-32B. The first stage pulls out every sentence that describes the
+patient's negative mood or coping difficulty. The second stage checks
+whether that sentence is the patient's own reported and whether it's
+connected to their cancer diagnosis or treatment.</p>
+
+<hr />
+<p><strong>Clinical Notes</strong>   <strong>→</strong>   <strong>LLM-Based Filter   **→</strong>   <strong>Machine Learning
+                               (Qwen2.5-32B)</strong>              Model**
+  ——————– ——- ——————– ——- ——————–</p>
+
+<hr />
+
+<p>Figure 1: The extraction pipeline: raw notes go through an LLM filter,
+and only cancer-linked evidence feeds the final model.</p>
+
+<p>The first prompts kept confusing physical symptoms and clinician
+observations with patient emotion, and I found a truncation bug cutting
+off notes before the LLM saw the relevant sentence. Splitting the task
+into a two-stage pipeline (first casting a wide net for candidate
+sentences, then classifying each one specifically as the patient's own
+words) fixed the conflation problem, along with catching a contamination
+bug where the model was echoing back my own example sentences,
+presenting them as evidence. I validated each prompt against six
+evidence-positive notes and six control notes. The final prompt scored a
+12/12. I then ran it across nearly 12,000 notes and kept about 1,100
+that contained cancer-linked psychosocial evidence.</p>
+
+<h1 id="finding-themes"><strong>Finding Themes</strong></h1>
+
+<p>With that filtered evidence, I ran topic modeling to see what themes
+actually showed up. I tried two different methods, Latent Dirichlet
+Allocation (LDA) and BERTopic, on two different versions of the text
+(the full notes and the LLM-extracted evidence), which gave me four
+combinations to compare. The topics in topic modeling on the full notes
+were dominated by organ systems and medication names, not psychology,
+which makes sense, as MIMIC-IV is ICU and ED data.</p>
+
+<p>LDA on the filtered evidence, though, had six clear, clinically
+interpretable themes, including one theme that was about suicidal
+ideation and depression; words like “depression,” “anxiety,” “cancer,”
+and “suicide” all clustered together. That theme showed up relatively
+more often in patients who went on to have a documented suicide-related
+event than in patients who didn't.</p>
+
+<p><img src="media/image1.png" alt="" />{width=”6.5in” height=”2.9652777777777777in”}</p>
+
+<p>Figure 2: The six themes LDA found in genuine psychosocial evidence.
+Topic 1 is the only one containing explicit suicide/ideation language.</p>
+
+<h1 id="leakage-correction-and-structured-accuracy-metrics"><strong>Leakage Correction and Structured Accuracy Metrics</strong></h1>
+
+<p>Early on, my structured-data model was hitting an AUC of 0.889 (a
+measure of how well the model separates patients who had an event from
+patients who didn't, where 0.5 is a coin flip and 1.0 is perfect). That
+number was unusually and unrealistically high for this kind of task. In
+a meeting with my mentors, one of them asked me: Are you sure nothing
+from after the event is leaking into your features?</p>
+
+<p>After looking back at my data that was being used as input, a handful of
+notes charted the same day as the suicide-related event itself were
+being used as “before the event” evidence, when they should have been
+excluded. Second, my psychiatric history flags, things like “history of
+depression” or “prior self-harm”, had no date cutoff at all. A diagnosis
+coded during the same hospital stay as the actual event was still
+counting as “history,” which meant the model was partly learning to
+recognize the event from information that existed because the event had
+already happened.</p>
+
+<p>After re-running with leakage-safe data, the structured-only AUC dropped
+to 0.792. That proved to be a clinically reproducible and accurate
+metric, and it lands within the range of published suicide-risk
+prediction models.</p>
+
+<p><strong>Using Clinical Notes in Machine Learning Models</strong></p>
+
+<p>With the leakage issue addressed, I compared three types of models with
+the data, Logistic Regression, Random Forest, and Gradient Boosting, on
+structured data alone, note-derived features alone, and both structured
+and note-derived data combined.</p>
+
+<p>For Logistic Regression, adding note features made no significant
+difference. But for Random Forest and Gradient Boosting, combining
+structured data with note-derived features, whether from my topic model
+or from a simpler word-frequency method called TF-IDF, produced a
+statistically significant improvement (p &lt; 0.001 for both). The best
+combined model reached an AUC of 0.827. The value of the notes depended
+entirely on what kind of model you used to read them, as linear models
+could not use the extra signal, but tree-based models, which can pick up
+on more complicated patterns, could.</p>
+
+<p><img src="media/image2.png" alt="" />{width=”6.5in” height=”2.384027777777778in”}</p>
+
+<p>Figure 4: ROC-AUC curves for classification of cancer-related suicide
+risk. The Gradient Boosting model using topics and structured data
+ROC-AUC was 0.798, while the Gradient Boosting model using TF-IDF
+derived features and structured data ROC-AUC was 0.827.</p>
+
+<p><img src="media/image3.png" alt="" />{width=”6.5in” height=”3.3131944444444446in”}</p>
+
+<p>Figure 5: Gini importance graphs with top feature contributions for the
+combined Gradient Boosting models. Structured features lead both models,
+with note-derived features contributing psychological significance.</p>
+
+<p><img src="media/image4.png" alt="" />{width=”6.395833333333333in”
+height=”2.7291666666666665in”}</p>
+
+<p>Figure 6: Model ROC-AUC for classification of cancer-related suicide
+risk. Error bars show mean ± SD across 10 cross-validation folds. The
+p-value compares Combined (structured + notes) vs. Structured-only on
+the same folds, isolating the added contribution of note features beyond
+structured data alone. Both TF-IDF and LDA topics significantly improve
+tree-based models (RF/GB) when added to structured data (paired t-test,
+p&lt;0.001 for both), but not Logistic Regression.</p>
+
+<h1 id="a-longitudinal-trend"><strong>A Longitudinal Trend</strong></h1>
+
+<p>I also examined whether the rate of psychosocial evidence in a
+patient's notes changes as they approach their event, not just whether
+it is present at all. For patients who went on to have a documented
+event, the share of notes containing psychosocial evidence nearly
+doubled in the month before the event compared to a year or more before
+it. For patients who never had an event, that rate stayed essentially
+flat for the entire time. This held up even after I rechecked it against
+the same leakage issue I found earlier (p = 0.0053), which shows it is a
+meaningful signal.</p>
+
+<p><img src="media/image5.png" alt="" />{width=”5.395833333333333in”
+height=”3.3333333333333335in”}</p>
+
+<p>Figure 7: Longitudinal graph showing increasing case prevalence over
+time. Cases nearly double approaching the event; controls stay flat
+(interaction p=0.0053, n=9,068).</p>
+
+<p><strong>Conclusion, Limitations, and Future Work</strong></p>
+
+<h1 id="combining-structured-ehr-data-with-note-derived-features-whether-lda-topics-or-tf-idf-significantly-improves-tree-based-models-like-random-forest-and-gradient-boosting-pushing-roc-auc-to-0798-and-0827-respectively-well-above-the-0792-achieved-with-structured-data-alone-for-the-longitudinal-finding-psychosocial-evidence-in-clinical-notes-doesnt-just-indicate-risk-at-one-point-it-rises-as-cases-approach-their-event-p00053-suggesting-a-significant-trajectory-based-signal-mimic-iv-v31-is-icued-only-with-no-psychotherapy-notes-and-cancer-specific-documentation-is-very-sparse-meaning-the-model-is-working-with-a-narrower-section-of-a-patients-full-psychiatric-record-i-plan-on-pulling-broader-cancer-related-reports-for-the-same-cohort-and-validating-whether-this-kind-of-trajectory-based-monitoring-could-be-implemented-in-a-clinical-oncology-setting">Combining structured EHR data with note-derived features, whether LDA topics or TF-IDF, significantly improves tree-based models like Random Forest and Gradient Boosting, pushing ROC-AUC to 0.798 and 0.827, respectively, well above the 0.792 achieved with structured data alone. For the longitudinal finding, psychosocial evidence in clinical notes doesn't just indicate risk at one point. It rises as cases approach their event (p=0.0053), suggesting a significant trajectory-based signal. MIMIC-IV v3.1 is ICU/ED-only with no psychotherapy notes, and cancer-specific documentation is very sparse, meaning the model is working with a narrower section of a patient's full psychiatric record. I plan on pulling broader cancer-related reports for the same cohort and validating whether this kind of trajectory-based monitoring could be implemented in a clinical oncology setting.</h1>
+
+<h1 id="acknowledgements"><strong>Acknowledgements</strong></h1>
+
+<p>Thank you to Joshua Levy, Louis Vaickus, Alos Diallo, Benjamin Mattern,
+and Matthew Hayden at Dartmouth and EDIT AI, as well Monica Dimambro and
+Maxwell Levis at the VA, whose own prior work on LLM-based suicide risk
+extraction in veterans was the ground work for this project.</p>
+
+<p>Data: MIMIC-IV v3.1 and MIMIC-IV v2.2 Note (PhysioNet), restricted
+access. All analysis was performed on Dartmouth's Discovery HPC
+cluster.</p>
 
 
           </article>
