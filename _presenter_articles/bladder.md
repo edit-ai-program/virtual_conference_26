@@ -12,7 +12,7 @@ abstract: Bladder cancer has one of the highest recurrence rates of any cancer, 
 summary: We compared the performance of two different methods of how each would model would segment cell images and diagnose it into positive, negative, suspicious, and atypical cells. We found that a newer deep learning method, U-net expectedly performed better than the traditional deep learning method.  
 excerpt_title: Q&A
 ---
-**Bios:** [Ameya Rajeev](https://ben-m-7.github.io/editai_internship/people/),[Abhinav Kakkera](https://ben-m-7.github.io/editai_internship/people/),[Aqib Nawaz Shaik](https://ben-m-7.github.io/editai_internship/people/),[Gagan Girish](https://ben-m-7.github.io/editai_internship/people/),[David Ahn](https://ben-m-7.github.io/editai_internship/people/),[Joycelyn Cheng](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Ameya Rajeev](https://edit-ai-program.github.io/editai_internship/people/),[Abhinav Kakkera](https://edit-ai-program.github.io/editai_internship/people/),[Aqib Nawaz Shaik](https://edit-ai-program.github.io/editai_internship/people/),[Gagan Girish](https://edit-ai-program.github.io/editai_internship/people/),[David Ahn](https://edit-ai-program.github.io/editai_internship/people/),[Joycelyn Cheng](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Skills Development
 

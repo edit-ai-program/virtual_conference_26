@@ -12,7 +12,7 @@ abstract: Although fluorescence-guided surgery allows tumor visualization in rea
 summary: Surgeons can use fluorescent dyes to help find tumors, but the resulting images are flat while tumors are three-dimensional, making it difficult to see exactly where cancer cells are. Our project uses computer vision and machine learning to combine many tissue images into 3D tumor models, helping connect what surgeons see during an operation with what the tumor actually looks like under a microscope.
 excerpt_title: Q&A
 ---
-**Bios:** [Arjun Garg](https://ben-m-7.github.io/editai_internship/people/HS_Arjun_Garg),[Arav Srivastava](https://ben-m-7.github.io/editai_internship/people/HS_Arav_Srivastava),[Violet Yan](https://ben-m-7.github.io/editai_internship/people/),[Aahan Sachdeva](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Arjun Garg](https://edit-ai-program.github.io/editai_internship/people/HS_Arjun_Garg),[Arav Srivastava](https://edit-ai-program.github.io/editai_internship/people/HS_Arav_Srivastava),[Violet Yan](https://edit-ai-program.github.io/editai_internship/people/),[Aahan Sachdeva](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 

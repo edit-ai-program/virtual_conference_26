@@ -12,7 +12,7 @@ abstract: Cancer patients face an elevated risk of suicidal ideation and self-ha
 summary: Cancer patients can show signs of serious emotional distress that get written down by doctors in their medical notes but never show up in the codes and reports hospitals normally use to track patient health. This project built a tool that uses AI to read those notes, pick out signs of genuine emotional distress, and combine that with a patient's medical history to screen for signs of a mental health crisis.
 excerpt_title: Q&A
 ---
-**Bios:** [Maximilian Wakefield](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Maximilian Wakefield](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Skills Development
 

@@ -12,7 +12,7 @@ abstract: Cervical cancer remains a major public health challenge, particularly 
 summary: We developed a computer-based tool that organizes cervical screening images by grouping together cells that look similar, helping experts focus their attention on the cells that may be most important to review. Our goal is to make cervical cancer screening faster and more efficient, especially in places like Honduras where access to trained specialists and screening resources can be limited.
 excerpt_title: Q&A
 ---
-**Bios:** [Gerardo Escoto](https://ben-m-7.github.io/editai_internship/people/),[Matthew Flowerhill](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Gerardo Escoto](https://edit-ai-program.github.io/editai_internship/people/),[Matthew Flowerhill](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Skills Development
 

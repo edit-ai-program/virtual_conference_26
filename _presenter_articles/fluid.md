@@ -12,7 +12,7 @@ abstract: Fluid cytology is an important diagnostic tool for detecting malignant
 summary: I developed a computer-based method to analyze digital microscope slides made from fluid cytology samples, where cells collected from fluids such as urine or pleural fluid are examined for signs of cancer. The method showed the most promise for recognizing slides positive for malignancy, while also showing that larger datasets and more detailed cell labeling are needed before this approach could be used in clinical care.
 excerpt_title: Q&A
 ---
-**Bios:** [Afya Shaikh](https://ben-m-7.github.io/editai_internship/people/HS_Afya_Shaikh)
+**Bios:** [Afya Shaikh](https://edit-ai-program.github.io/editai_internship/people/HS_Afya_Shaikh)
 
 **Program Track:** Advanced Research
 

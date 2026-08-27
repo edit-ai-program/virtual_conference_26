@@ -12,7 +12,7 @@ abstract: Triple-negative breast cancer (TNBC) is an aggressive type of breast c
 summary: We tested and compared two AI-based models on their ability to identify the tumor cells in  breast cancer samples. In the future, this can help doctors identify the amount of tumor left after initial treatment to diagnose more if necessary.
 excerpt_title: Q&A
 ---
-**Bios:** [Charles Fry](https://ben-m-7.github.io/editai_internship/people/),[Krish Pruthi](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Charles Fry](https://edit-ai-program.github.io/editai_internship/people/),[Krish Pruthi](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 

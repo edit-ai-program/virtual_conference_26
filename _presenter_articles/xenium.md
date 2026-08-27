@@ -12,7 +12,7 @@ abstract: Spatial transcriptomics technologies such as 10x Genomics Visium and X
 summary: We built an AI tool that can look at a standard tissue slide from a colorectal cancer biopsy (the kind every hospital already takes) and predict detailed molecular information about the tumor that would normally require expensive, specialized lab testing to obtain. The goal is to make this kind of deep tumor insight, which could help guide treatment decisions, accessible and affordable for cancer patients anywhere, not just at major research hospitals.
 excerpt_title: Q&A
 ---
-**Bios:** [Isha Garg](https://ben-m-7.github.io/editai_internship/people/),[Varshith Gude](https://ben-m-7.github.io/editai_internship/people/),[Soham Pradhan](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Isha Garg](https://edit-ai-program.github.io/editai_internship/people/),[Varshith Gude](https://edit-ai-program.github.io/editai_internship/people/),[Soham Pradhan](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 

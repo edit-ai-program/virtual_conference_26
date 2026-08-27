@@ -12,7 +12,7 @@ abstract: Colorectal cancer (CRC) recurs in up to 30% of Stage II patients despi
 summary: Even after successful surgery, up to 3 in 10 colon cancer patients see their cancer come back. I built a framework that automatically discovers recurring patterns of cells within colon tumor tissue and rigorously tests whether any of these neighborhoods are linked to the cancer coming back. 
 excerpt_title: Q&A
 ---
-**Bios:** [Eesha Vanamala](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Eesha Vanamala](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 

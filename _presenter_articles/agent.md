@@ -12,7 +12,7 @@ abstract: Research groups accumulate code, notebooks, and configuration across s
 summary: When a scientist finishes a project, the knowledge of exactly how they did it often lives only in their head, and the next researcher can lose days working out which piece of code produced which result. We built an assistant that reads a lab's own files and answers those questions in plain English, running entirely on the lab's own computers so that patient information never leaves the building, and it always shows you which files it read.
 excerpt_title: Q&A
 ---
-**Bios:** [Avilash Angirekula](https://ben-m-7.github.io/editai_internship/people/HS_Avilash_Angirekula)
+**Bios:** [Avilash Angirekula](https://edit-ai-program.github.io/editai_internship/people/HS_Avilash_Angirekula)
 
 **Program Track:** Advanced Research
 

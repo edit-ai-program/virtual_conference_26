@@ -12,7 +12,7 @@ abstract: Bladder cancer is the 9th most common cancer globally, with non-muscle
 summary: As a common and highly recurrent cancer, bladder cancer requires enhanced screening methods to promote early detection. By combining both deep learning and machine learning algorithms, we were able to better assess abnormalities in cell samples, speeding up the efficiency and accuracy of screening.
 excerpt_title: Q&A
 ---
-**Bios:** [Siddhartha Vatsa](https://ben-m-7.github.io/editai_internship/people/),[Joshua Wang](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Siddhartha Vatsa](https://edit-ai-program.github.io/editai_internship/people/),[Joshua Wang](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Skills Development
 

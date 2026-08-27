@@ -12,7 +12,7 @@ abstract: Pathology reports contain diagnostic and staging information that coul
 summary: Every cancer diagnosis comes with a detailed reports containing critical details, but the information is locked in dense medical language and not feasible to use at scale. Our team taught computers to read these reports automatically, pulling the important details like cancer type.
 excerpt_title: Q&A
 ---
-**Bios:** [Shrey Shah](https://ben-m-7.github.io/editai_internship/people/),[Shreyas Kalidindi](https://ben-m-7.github.io/editai_internship/people/),[Daniel Gabriel](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Shrey Shah](https://edit-ai-program.github.io/editai_internship/people/),[Shreyas Kalidindi](https://edit-ai-program.github.io/editai_internship/people/),[Daniel Gabriel](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Skills Development
 

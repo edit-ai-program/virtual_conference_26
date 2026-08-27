@@ -12,7 +12,7 @@ abstract: Pathology report text contains critical biomarker results; however, th
 summary: I researched whether local AI models could analyze breast cancer pathology reports and correctly extract meaningful findings from the reports, such as the results of hormone receptors and HER2 testing, without transmitting patients' confidential information to other organizations. The most accurate model was highly accurate but not error-free, making errors in complex pathology reports, indicating that the use of AI could speed up the review of records by researchers, but humans would still be accountable for validation.
 excerpt_title: Q&A
 ---
-**Bios:** [Ved Dwivedi](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Ved Dwivedi](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 

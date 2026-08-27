@@ -12,7 +12,7 @@ abstract: Cytology screening can require examination of millions of cells in a s
 summary: Cytology requires a pathologist to screen thousands to millions of cells in a whole-slide image sample for telling signs of diseases like cancer. People are using deep learning to provide computer-guided assistance, and we're hoping to give other researchers a better starting point by creating a foundation model that represents their single-cell images in a meaningful, numerical form. 
 excerpt_title: Q&A
 ---
-**Bios:** [Ethan Effendi](https://ben-m-7.github.io/editai_internship/people/),[Aaditya Panchal](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Ethan Effendi](https://edit-ai-program.github.io/editai_internship/people/),[Aaditya Panchal](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 

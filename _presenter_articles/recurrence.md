@@ -12,7 +12,7 @@ abstract: Colorectal cancer recurs in up to 30% of patients after resection, yet
 summary: Colorectal cancer comes back in up to 30% of patients after surgery, but doctors currently have no reliable way to predict who is at risk. Using advanced technology that maps individual cells within tumors, we discovered that patients whose cancer stayed away had a specific type of immune cell (called IgG plasma cells) organized into tight clusters, suggesting that how immune cells are arranged in a tumor -not just how many there are - could help predict and prevent cancer recurrence.
 excerpt_title: Q&A
 ---
-**Bios:** [Amruta Velamuri](https://ben-m-7.github.io/editai_internship/people/),[Ellie Chan](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Amruta Velamuri](https://edit-ai-program.github.io/editai_internship/people/),[Ellie Chan](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 

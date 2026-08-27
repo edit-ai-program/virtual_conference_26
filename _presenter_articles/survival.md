@@ -12,7 +12,7 @@ abstract: 	Accurate survival prediction for kidney renal clear cell carcinoma (K
 summary: Currently, how long patients' have to live from kidney cancer is predicted by looking at tissue samples under a microscope, but this can miss important molecular details hidden in the tumor. In this project, we developed an AI system that reads these tissue slides and can predict a patient's survival odds by inferring genetic activity of the tumor, potentially allowing for survival prediction for kidney cancer using only routine slides already collected at diagnosis. 
 excerpt_title: Q&A
 ---
-**Bios:** [Diya Ramakrishnan](https://ben-m-7.github.io/editai_internship/people/),[Shreyas Pendem](https://ben-m-7.github.io/editai_internship/people/HS_Shreyas_Pendem)
+**Bios:** [Diya Ramakrishnan](https://edit-ai-program.github.io/editai_internship/people/),[Shreyas Pendem](https://edit-ai-program.github.io/editai_internship/people/HS_Shreyas_Pendem)
 
 **Program Track:** Advanced Research
 

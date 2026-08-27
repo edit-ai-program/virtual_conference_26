@@ -12,7 +12,7 @@ abstract: Hematoxylin and eosin (H&E) staining is the most widely used tissue st
 summary: Doctors diagnosing diseases like cancer from tissue samples typically rely on a chemical dye process called H&E staining, which uses up part of the sample in making it visible under a microscope. My project alleviates this by building AI models capable of instantly generating that H&E image from a non-destructive scan called autofluorescence imaging, allowing for quicker diagnoses and better preserved tissue.
 excerpt_title: Q&A
 ---
-**Bios:** [Anuva Shah](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Anuva Shah](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 

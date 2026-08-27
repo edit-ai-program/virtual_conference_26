@@ -12,7 +12,7 @@ abstract: Spatial transcriptomics (ST) has transformed the study of tissue biolo
 summary: Doctors can examine a piece of skin under a microscope, and they can separately run an expensive test that shows which genes are switched on in that same tissue. I built an AI system that works backward from those gene readings to draw what the tissue should look like under the microscope, then measured how closely the drawings matched real tissue and whether they could help train other medical AI tools when real samples are scarce.
 excerpt_title: Q&A
 ---
-**Bios:** [Vedhsai Thiriveedi](https://ben-m-7.github.io/editai_internship/people/HS_VedhSai_Thiriveedi)
+**Bios:** [Vedhsai Thiriveedi](https://edit-ai-program.github.io/editai_internship/people/HS_VedhSai_Thiriveedi)
 
 **Program Track:** Mentor
 

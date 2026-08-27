@@ -12,7 +12,7 @@ abstract: Background- Residual Cancer Burden (RCB) is a clinically useful measur
 summary: We studied whether AI tools that can run securely within a hospital could read breast cancer pathology reports and pull out the information doctors use to measure how much cancer remains after treatment. We found that the best AI model could identify much of this information accurately, but many reports were missing key details altogether, showing that improving medical documentation is just as important as improving the AI.
 excerpt_title: Q&A
 ---
-**Bios:** [Vivaan Mahajan](https://ben-m-7.github.io/editai_internship/people/HS_Vivaan_Mahajan)
+**Bios:** [Vivaan Mahajan](https://edit-ai-program.github.io/editai_internship/people/HS_Vivaan_Mahajan)
 
 **Program Track:** Mentor
 

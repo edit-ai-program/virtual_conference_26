@@ -12,7 +12,7 @@ abstract: Spatial transcriptomics measures gene expression in situ but remains f
 summary: I am developing an AI system that looks at standard microscope images of colorectal cancer tissue and predicts patterns of gene activity that would normally require expensive molecular testing. The project focuses on understanding when and why the AI makes mistakes, whether it can recognize when it may be wrong, and which errors remain hidden, so future tools like this can be used more safely and reliably.
 excerpt_title: Q&A
 ---
-**Bios:** [Alice Qian](https://ben-m-7.github.io/editai_internship/people/)
+**Bios:** [Alice Qian](https://edit-ai-program.github.io/editai_internship/people/)
 
 **Program Track:** Advanced Research
 
