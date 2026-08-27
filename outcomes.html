@@ -1,0 +1,134 @@
+---
+layout: page
+title: Program Outcomes
+nav: true
+---
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements@1.0.0-alpha13/dist/css/index.min.css" />
+<script src="https://cdn.tailwindcss.com/3.0.0"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements@1.0.0-alpha13/dist/js/index.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/base.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/components.min.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css"
+/>
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/utilities.min.css" />
+
+<!-- Required popper.js -->
+<script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+
+
+<div class="bg-white overflow-hidden">
+  <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div class="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-none"></div>
+    <div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-1 lg:gap-8 lg:max-w-none">
+      <div>
+        <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">EDIT AI Program Outcomes</h3>
+        <h2 class="text-base text-lime-800 font-semibold tracking-wide">Improving our internship opportunity.</h2>
+        <br>
+        <br>
+      </div>
+      <div class="mt-8 lg:mt-0">
+        <div class="text-base max-w-prose mx-auto lg:max-w-none">
+          <p class="text-lg text-gray-600">The goal of the EDIT AI program is to provide a learning experience for students to
+          explore the intersections between AI and medicine. We have recently submitted a proposal for the NIH R25 Science Educational Partnership Award (SEPA),
+          which will allow us to expand the scope and reach of this current opportunity. If funded, we will interface with external program evaluators
+          to better understand how this program can be improved. In the meanwhile, we are conducting several internal assessments of the program offering
+          through surveys sent to students at the beginning and end of summer. We aim to publish these findings and have included a summary of some of our initial observations below (<strong>click images to learn more via popups</strong>).
+          Currently we are supported with funding through Dartmouth Cancer Center.
+          We are updating this page with outcomes from this year's cohort (these are outcomes for 2022), stay tuned...!:</p>
+        </div>
+      </div>
+      <h4 class="mt-2 text-l leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl">Surveys taken at start of summer support program track placement</h4>
+      <div class="flex justify-center flex-wrap">
+        <button type="button" class="
+                px-3
+                py-3
+                bg-transparent
+                text-white
+                font-medium
+                text-sm
+                leading-snug
+                uppercase
+                rounded
+                shadow-md
+                hover:bg-green-700 hover:shadow-lg
+                focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0
+                active:bg-green-800 active:shadow-lg
+                transition
+                duration-150
+                ease-in-out
+              " data-bs-toggle="popover" data-bs-title="Differences between program tracks at beginning of summer."
+          data-bs-content="Using several multivariate ordinal regression models to understand how the program tracks differed in development,
+          adjusting for age and gender, results indicate that students placed onto the Advanced Track are more familiar/comfortable with EDIT AI concepts (e.g., programming, medical applications of AI, bioinformatics)
+          than students on the Skills Track.
+          Mentor Track students were more familiar with machine learning, medical applications of AI,
+          and high performance computing resources than students on the Advanced Research Track. Four of eleven core competencies are visualized here.">
+          <img class="object-cover shadow-lg rounded-lg" src="/virtual_conference_26/assets/images/outcome_fig1.png" alt="">
+        </button>
+        <script>
+          var popoverTriggerList = [].slice.call(
+            document.querySelectorAll('[data-bs-toggle="popover"]')
+          );
+          var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new Popover(popoverTriggerEl);
+          });
+        </script>
+        </div>
+        <h4 class="mt-2 text-l leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl">All program tracks improve over the course of the summer</h4>
+        <div class="flex justify-center flex-wrap">
+          <button type="button" class="
+                  px-3
+                  py-3
+                  bg-transparent
+                  text-white
+                  font-medium
+                  text-sm
+                  leading-snug
+                  uppercase
+                  rounded
+                  shadow-md
+                  hover:bg-green-700 hover:shadow-lg
+                  focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0
+                  active:bg-green-800 active:shadow-lg
+                  transition
+                  duration-150
+                  ease-in-out
+                " data-bs-toggle="popover_v2" data-bs-title="Preliminary findings– Improvements in material familiarity from start to end of summer by track."
+            data-bs-content="Fitting additional ordinal regression models with covariate adjustment and accounting for repeat measurements by individual (i.e., before/after paired measures across time),
+            we identified longitudinal improvements in familiarity with the core concepts. Most notably, skills track students improved significantly in their underestanding and familiarity of machine learning,
+            medical applications of AI and bioinformatics. In these cases, skills track familiarity with these concepts by the end of summer was similar to advanced track students at the beginning of summer,
+            suggesting the students may have adequately progressed from one track to another. However, significant gaps still exist between skills and advanced track students with regards to confidence in programming skills,
+            which presents future room for improving the program as well as following up with these students to ensure they are adequately prepared for the advanced track. Advanced track students gain a deeper appreciation
+            for AI applications in medicine by the end of the summer program.">
+            <img class="object-cover shadow-lg rounded-lg" src="/virtual_conference_26/assets/images/outcome_fig2.png" alt="">
+          </button>
+          <script>
+            var popoverTriggerList = [].slice.call(
+              document.querySelectorAll('[data-bs-toggle="popover_v2"]')
+            );
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+              return new Popover(popoverTriggerEl);
+            });
+          </script>
+  </div>
+
+
+    </div>
+  </div>
+</div>

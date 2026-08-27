@@ -1,0 +1,1169 @@
+<!DOCTYPE html><html lang="en">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Sanjay Jacob, Neha Reddy & Amruta Rajeev - EDIT AI 2026 Virtual Conference</title>
+
+<meta name="description" content="End of summer poster and video presentations.
+">
+<link rel="canonical" href="https://edit-ai-program.github.io/virtual_conference_26/deprecated/doors.html"><link rel="alternate" type="application/rss+xml" title="EDIT AI 2026 Virtual Conference" href="/virtual_conference_26/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/virtual_conference_26/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/virtual_conference_26/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/virtual_conference_26/assets/favicon-16x16.png"><link rel="manifest" href="/virtual_conference_26/assets/site.webmanifest"><link rel="mask-icon" href="/virtual_conference_26/assets/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="/virtual_conference_26/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/virtual_conference_26/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet -->
+<link rel="stylesheet" href="/virtual_conference_26/assets/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css" ><!-- start custom head snippets -->
+
+<!-- end custom head snippets -->
+<script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.6',
+      sources: {
+        font_awesome: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/virtual_conference_26/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script>
+</head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1667.000000pt" height="1667.000000pt" viewBox="0 0 1667.000000 1667.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.14, written by Peter Selinger 2001-2017
+</metadata>
+<g transform="translate(0.000000,1667.000000) scale(0.100000,-0.100000)"
+fill="#ffffff" stroke="none">
+<path d="M185 16516 l0 -155 100 -67 c132 -89 184 -130 279 -222 248 -241 388
+-561 471 -1072 12 -71 14 -86 20 -140 3 -30 8 -66 10 -80 4 -23 12 -116 20
+-230 4 -43 9 -132 21 -350 7 -124 7 -11542 0 -11725 -7 -173 -19 -357 -31
+-485 -11 -106 -16 -157 -20 -180 -2 -14 -6 -43 -9 -65 -4 -22 -9 -56 -11 -75
+-16 -132 -73 -366 -121 -505 -130 -369 -325 -601 -704 -837 -25 -15 -25 -16
+-25 -172 l-1 -157 3616 2 c1988 1 3629 5 3645 8 23 5 30 12 31 31 1 14 4 51 8
+83 9 81 15 150 22 242 3 44 7 98 10 120 2 22 6 76 9 120 3 44 7 100 10 125 2
+25 7 86 10 135 4 50 8 110 11 135 2 25 6 81 9 125 3 44 7 112 10 150 11 143
+15 212 20 295 3 47 7 117 10 155 2 39 7 113 10 165 3 52 7 131 10 175 10 160
+16 272 20 370 3 55 7 142 10 194 3 52 7 169 11 260 3 91 7 213 9 271 8 230 8
+231 -8 247 -15 15 -33 -1 -209 -173 -197 -193 -284 -266 -373 -312 -41 -22
+-63 -26 -125 -26 -67 0 -102 10 -330 86 -224 75 -372 127 -490 173 -473 182
+-576 228 -627 277 -68 66 -47 82 277 221 135 57 385 166 557 241 171 75 316
+136 322 136 6 0 11 5 11 10 0 6 7 10 15 10 8 0 23 4 33 10 9 5 37 18 62 29 83
+36 235 103 265 117 44 20 304 133 497 217 92 40 170 79 172 87 3 8 8 108 12
+222 6 194 5 207 -13 216 -14 8 -78 -13 -293 -99 -151 -60 -284 -113 -295 -118
+-11 -6 -137 -57 -280 -115 -311 -125 -1004 -406 -1095 -444 -36 -15 -67 -27
+-70 -28 -3 0 -14 -4 -25 -9 -397 -162 -532 -166 -753 -21 -103 67 -281 251
+-527 541 -224 264 -324 409 -309 448 3 8 16 19 30 25 21 10 172 44 254 58 14
+2 36 7 50 10 14 3 34 8 45 10 11 2 88 17 170 34 83 17 161 33 175 36 14 3 102
+21 195 40 94 19 181 36 195 39 14 3 48 9 75 15 28 6 59 12 70 14 11 2 56 12
+100 21 44 9 91 19 105 21 21 4 178 36 245 50 127 26 518 104 545 109 19 3 55
+11 80 16 25 6 56 13 70 15 14 2 36 7 50 10 14 3 36 8 50 10 14 2 36 7 50 10
+14 3 34 8 45 10 11 2 79 16 150 30 72 14 141 28 155 31 14 2 77 15 140 28 63
+13 129 26 145 29 42 8 82 16 205 41 14 3 81 16 150 30 166 32 160 28 161 84 1
+25 3 64 4 86 9 134 8 296 -1 305 -8 8 -32 8 -80 0 -91 -14 -153 -25 -216 -36
+-18 -3 -44 -7 -58 -9 -14 -2 -63 -10 -110 -19 -131 -23 -143 -25 -175 -30 -16
+-3 -70 -12 -120 -21 -49 -9 -101 -18 -115 -20 -29 -5 -190 -32 -235 -40 -16
+-3 -37 -8 -45 -10 -8 -2 -37 -7 -65 -10 -27 -4 -57 -8 -65 -10 -8 -3 -32 -7
+-54 -11 -21 -3 -48 -8 -60 -10 -11 -2 -47 -8 -78 -14 -32 -6 -70 -12 -85 -15
+-16 -3 -55 -10 -88 -15 -33 -5 -71 -12 -85 -15 -47 -8 -364 -64 -455 -79 -30
+-5 -120 -21 -320 -56 -60 -11 -128 -22 -150 -25 -22 -3 -46 -8 -54 -11 -8 -2
+-30 -7 -50 -10 -20 -2 -45 -7 -57 -9 -12 -3 -39 -7 -60 -10 -21 -3 -89 -15
+-151 -26 -313 -55 -399 -31 -541 153 -23 31 -62 90 -87 133 -45 79 -230 449
+-303 606 -22 47 -66 137 -96 198 -60 121 -72 161 -56 190 14 27 54 33 285 46
+55 3 125 8 155 10 63 5 237 15 485 30 55 3 129 8 165 10 36 3 103 7 150 10
+169 10 256 15 335 20 72 5 133 8 330 20 33 2 114 6 180 10 66 3 140 8 165 10
+25 2 97 7 160 10 63 3 140 8 170 10 30 2 100 6 155 9 55 4 136 8 180 11 44 2
+116 7 160 9 44 3 125 8 180 11 55 3 125 8 155 10 30 3 109 7 175 10 66 3 145
+8 175 10 30 3 102 7 160 10 159 8 234 15 244 25 13 13 24 390 11 409 -7 13
+-114 12 -575 -4 -58 -2 -202 -6 -320 -10 -118 -3 -285 -8 -370 -11 -85 -2
+-222 -7 -305 -9 -82 -2 -251 -7 -375 -10 -1479 -42 -1525 -41 -1614 17 -88 58
+-168 218 -211 424 -2 10 -13 64 -24 119 -32 150 -42 202 -47 238 -2 18 -6 43
+-9 57 -3 14 -12 70 -20 125 -8 55 -17 109 -19 120 -9 48 -20 134 -31 231 -11
+105 2 109 240 64 54 -10 83 -15 215 -34 25 -4 70 -11 100 -16 30 -5 71 -11 90
+-14 19 -3 85 -12 145 -21 120 -17 145 -20 220 -30 28 -4 61 -9 75 -11 55 -8
+99 -14 180 -24 47 -6 96 -13 110 -15 14 -2 50 -6 80 -10 56 -7 74 -9 145 -19
+22 -3 60 -8 85 -11 25 -3 61 -7 80 -10 19 -3 55 -7 80 -10 25 -3 61 -8 80 -10
+19 -2 91 -11 160 -20 69 -9 141 -18 160 -20 62 -8 105 -13 169 -20 34 -4 72
+-8 84 -11 12 -2 49 -6 84 -9 34 -3 70 -7 80 -9 10 -2 47 -7 83 -11 36 -3 72
+-8 80 -10 8 -2 46 -6 83 -10 37 -3 77 -8 87 -10 10 -2 50 -7 87 -10 37 -4 75
+-9 83 -10 8 -2 44 -6 80 -10 36 -3 76 -8 90 -10 14 -2 52 -7 85 -10 33 -3 71
+-8 85 -10 14 -3 54 -7 90 -10 36 -3 76 -7 90 -10 33 -5 100 -13 175 -21 33 -3
+63 -7 66 -10 3 -2 13 2 22 9 14 10 18 38 22 147 3 74 8 154 9 177 5 52 -9 71
+-54 78 -19 3 -46 7 -60 10 -14 3 -45 7 -70 10 -25 3 -54 7 -65 9 -11 2 -40 7
+-65 11 -25 3 -58 9 -75 12 -16 3 -43 6 -60 8 -16 2 -43 6 -60 9 -16 3 -106 17
+-200 31 -229 34 -306 46 -395 60 -14 2 -61 9 -105 15 -44 7 -87 13 -95 15 -18
+3 -161 25 -210 31 -19 3 -46 7 -60 9 -38 7 -73 12 -225 35 -77 12 -151 23
+-165 25 -14 3 -43 7 -65 10 -89 14 -101 16 -125 20 -14 3 -41 7 -60 9 -41 5
+-93 13 -170 26 -30 5 -73 12 -95 15 -22 2 -51 7 -65 10 -14 3 -43 8 -65 10
+-22 3 -78 12 -125 20 -47 8 -103 17 -125 21 -155 23 -261 58 -317 104 -77 63
+-128 211 -152 440 -3 25 -8 65 -10 90 -3 25 -8 79 -11 120 -4 41 -8 89 -10
+105 -8 65 -19 245 -19 330 -1 84 0 90 23 101 19 10 36 8 90 -8 73 -21 298 -87
+321 -93 8 -2 71 -20 140 -40 69 -20 139 -40 155 -45 112 -31 187 -51 235 -65
+30 -9 62 -18 70 -20 8 -2 89 -25 180 -50 192 -54 236 -66 345 -95 44 -12 121
+-33 170 -47 50 -14 97 -26 105 -28 8 -2 35 -9 60 -16 25 -7 50 -13 55 -14 6
+-2 64 -17 130 -35 248 -67 300 -81 316 -85 10 -2 79 -20 155 -40 77 -20 146
+-39 154 -41 15 -3 163 -41 190 -48 48 -13 458 -118 472 -121 42 -9 48 12 54
+196 6 186 5 189 -41 201 -11 3 -74 20 -140 38 -66 18 -160 43 -210 56 -49 14
+-115 31 -145 40 -30 8 -62 17 -70 19 -8 1 -59 15 -113 30 -53 14 -105 28 -115
+30 -9 2 -51 13 -92 25 -90 26 -728 199 -753 205 -18 4 -127 34 -437 121 -326
+92 -418 136 -495 239 -48 62 -69 120 -80 212 -2 21 -7 58 -10 82 -19 165 -24
+669 -6 714 6 15 17 30 25 33 7 3 62 -18 121 -45 59 -28 108 -51 110 -51 2 0
+52 -23 111 -51 157 -74 627 -270 1014 -424 470 -187 536 -212 795 -310 127
+-47 239 -90 250 -95 54 -25 268 -100 285 -100 28 0 33 15 37 99 2 42 5 115 7
+163 2 56 0 93 -8 102 -9 12 -177 83 -621 263 -60 25 -123 51 -140 58 -16 7
+-104 43 -195 80 -91 37 -178 72 -195 80 -16 7 -120 50 -230 95 -110 45 -213
+88 -230 95 -16 7 -84 37 -150 65 -240 105 -282 157 -311 385 -7 59 -8 422 0
+480 3 22 8 67 12 100 12 109 29 124 96 87 18 -10 60 -34 93 -52 33 -18 72 -41
+87 -51 14 -11 29 -19 32 -19 3 0 27 -13 53 -28 26 -16 98 -55 158 -86 61 -32
+115 -62 120 -66 6 -4 55 -31 110 -60 55 -29 132 -69 170 -90 39 -20 120 -63
+180 -95 61 -32 137 -72 170 -90 33 -18 110 -58 170 -90 61 -32 146 -77 190
+-100 254 -134 432 -221 447 -218 24 6 27 24 33 204 l4 156 -117 63 c-64 35
+-135 73 -157 85 -22 12 -80 44 -130 70 -158 84 -235 126 -400 215 -27 15 -90
+49 -140 75 -282 151 -356 198 -430 272 -84 84 -90 106 -90 343 1 283 17 445
+51 513 25 47 56 37 179 -57 136 -105 451 -336 540 -396 36 -25 71 -50 78 -55
+36 -30 580 -393 602 -401 21 -8 45 25 46 64 0 20 3 86 5 146 3 76 1 113 -8
+123 -14 17 -272 210 -533 398 -301 217 -330 249 -329 359 0 151 47 444 81 514
+10 21 26 38 35 40 11 2 60 -38 130 -106 178 -172 210 -203 284 -269 193 -173
+340 -293 358 -293 19 0 18 29 -10 365 -14 161 -7 412 12 477 3 9 7 26 9 39 10
+50 68 154 106 190 50 47 81 57 112 36 117 -78 177 -243 179 -489 1 -104 -8
+-290 -18 -363 -2 -16 -6 -81 -9 -142 -6 -105 -5 -113 12 -113 31 1 350 280
+616 540 65 63 127 119 137 124 47 22 70 -43 111 -309 31 -203 31 -277 2 -334
+-27 -51 -68 -95 -125 -132 -34 -22 -89 -62 -283 -204 -38 -28 -151 -112 -250
+-186 -99 -74 -184 -137 -188 -140 -16 -12 -3 -305 15 -326 6 -8 19 -11 32 -7
+61 19 1150 778 1196 834 21 25 136 100 154 100 47 0 69 -49 81 -180 4 -36 9
+-78 11 -95 2 -16 6 -118 9 -226 6 -257 -5 -297 -106 -398 -57 -56 -125 -99
+-324 -206 -38 -21 -92 -50 -120 -65 -27 -15 -85 -46 -127 -69 -134 -71 -231
+-123 -283 -151 -27 -15 -86 -46 -130 -70 -161 -86 -202 -108 -288 -155 l-89
+-48 6 -161 c4 -88 9 -168 12 -178 10 -32 36 -27 137 26 56 29 170 88 252 131
+83 42 177 92 210 110 33 18 114 61 180 95 66 35 152 79 190 100 39 20 115 61
+170 90 224 118 270 143 280 150 6 4 60 33 120 65 61 32 115 61 120 65 6 4 42
+24 80 45 39 21 115 64 171 96 55 32 114 62 131 65 28 6 32 3 41 -27 6 -19 14
+-63 17 -99 4 -36 9 -81 11 -100 7 -47 6 -382 -1 -450 -6 -57 -26 -145 -44
+-193 -14 -37 -86 -107 -141 -138 -46 -25 -136 -64 -435 -189 -93 -39 -179 -75
+-190 -80 -11 -4 -171 -70 -355 -145 -184 -75 -371 -152 -415 -170 -44 -18
+-170 -70 -280 -115 -110 -45 -205 -88 -212 -97 -15 -19 -6 -331 9 -350 16 -20
+41 -16 136 21 110 42 349 133 427 161 97 36 431 166 690 268 596 237 972 395
+1265 534 176 84 193 89 210 68 6 -8 13 -27 15 -42 5 -37 5 -447 1 -498 -3 -22
+-7 -85 -10 -140 -6 -102 -9 -122 -26 -210 -30 -146 -151 -253 -370 -323 -80
+-26 -333 -97 -540 -152 -85 -23 -184 -50 -220 -60 -73 -21 -150 -42 -165 -45
+-13 -3 -188 -51 -279 -77 -38 -11 -76 -21 -85 -23 -9 -2 -51 -13 -93 -25 -43
+-11 -85 -23 -95 -25 -10 -2 -85 -22 -168 -45 -82 -22 -235 -63 -340 -91 -308
+-82 -325 -88 -326 -107 -1 -9 0 -48 1 -87 4 -180 10 -258 20 -270 13 -16 31
+-13 159 21 51 14 103 28 115 30 11 2 176 45 366 94 190 50 353 93 364 95 10 2
+102 27 205 54 102 28 222 59 266 71 44 11 103 27 130 35 57 17 382 105 405
+110 18 4 463 128 535 150 28 8 145 41 260 74 116 33 280 79 365 104 203 58
+196 57 217 42 14 -10 17 -27 17 -76 0 -68 -14 -297 -19 -333 -2 -11 -7 -59
+-10 -106 -12 -141 -14 -163 -20 -210 -21 -161 -37 -245 -59 -302 -54 -143
+-109 -192 -268 -233 -55 -14 -78 -19 -150 -30 -18 -3 -44 -7 -58 -10 -14 -3
+-38 -7 -55 -9 -102 -16 -165 -26 -200 -31 -22 -3 -65 -10 -95 -15 -30 -5 -77
+-12 -104 -15 -27 -3 -52 -8 -55 -10 -3 -1 -30 -6 -60 -10 -30 -4 -63 -9 -75
+-11 -11 -2 -38 -6 -61 -9 -22 -3 -65 -10 -95 -15 -30 -5 -75 -12 -100 -15 -25
+-4 -99 -15 -165 -26 -66 -10 -140 -21 -165 -24 -25 -3 -85 -12 -135 -20 -49
+-8 -108 -17 -130 -20 -75 -11 -100 -15 -125 -20 -14 -2 -42 -7 -62 -10 -47 -6
+-105 -15 -138 -20 -22 -4 -160 -24 -270 -40 -19 -3 -60 -10 -90 -15 -30 -5
+-75 -12 -100 -15 -25 -3 -72 -10 -105 -15 -33 -5 -78 -12 -100 -15 -22 -4 -51
+-8 -64 -10 -13 -2 -45 -7 -70 -11 -25 -4 -53 -8 -61 -9 -8 -2 -34 -6 -58 -10
+-23 -4 -46 -14 -51 -23 -5 -10 -7 -57 -5 -107 3 -49 6 -128 8 -174 3 -66 8
+-88 21 -98 10 -7 21 -11 24 -9 3 2 35 7 71 11 36 3 76 8 90 10 14 2 54 7 90
+10 36 4 72 9 80 10 8 1 46 6 83 10 37 3 77 8 87 10 11 2 50 6 88 10 38 3 78 7
+90 10 11 2 52 7 89 10 37 4 76 9 85 10 9 2 48 7 85 10 37 4 75 8 83 10 8 3 42
+7 75 10 33 4 72 8 88 11 15 2 51 6 80 9 28 3 68 7 87 10 19 2 55 7 80 10 25 3
+61 8 80 10 19 3 76 9 125 15 96 11 149 18 205 25 19 3 53 7 75 10 22 2 96 12
+165 21 69 9 143 18 165 20 22 2 72 9 110 14 39 5 90 12 115 15 25 4 56 8 70
+10 14 2 48 6 75 9 64 8 135 18 159 22 10 2 44 6 75 9 31 4 63 8 71 10 8 2 38
+7 65 10 28 3 61 8 75 10 14 2 45 7 70 10 25 3 104 15 175 26 176 26 189 28
+233 34 20 3 48 8 62 11 14 2 39 7 55 9 57 9 90 15 115 20 131 28 161 15 155
+-67 -4 -49 -35 -262 -55 -378 -5 -30 -12 -77 -16 -105 -3 -27 -8 -52 -9 -55
+-2 -3 -6 -26 -10 -50 -15 -105 -79 -391 -105 -469 -35 -108 -89 -200 -148
+-251 -25 -22 -47 -38 -50 -35 -3 3 -10 1 -16 -4 -34 -29 -230 -32 -831 -16
+-121 3 -296 8 -390 10 -93 3 -252 7 -352 10 -101 3 -260 8 -355 10 -95 3 -238
+7 -318 9 -80 3 -244 8 -365 11 -121 3 -267 8 -325 10 -372 14 -562 16 -575 5
+-10 -9 -13 -34 -9 -108 2 -53 6 -141 8 -195 2 -54 8 -103 14 -109 5 -5 40 -11
+78 -13 38 -2 107 -6 154 -9 47 -3 135 -8 195 -11 61 -3 126 -8 145 -10 19 -2
+98 -7 175 -11 77 -4 156 -8 175 -9 19 -2 89 -6 155 -10 66 -3 140 -8 165 -10
+25 -2 103 -7 173 -10 71 -4 150 -8 175 -10 26 -2 99 -6 162 -10 63 -3 140 -8
+170 -10 30 -3 102 -7 160 -10 128 -7 232 -13 325 -20 67 -4 155 -10 345 -20
+47 -3 126 -8 175 -11 50 -4 115 -8 145 -9 69 -4 234 -14 320 -20 36 -2 109 -7
+162 -10 144 -8 244 -14 328 -20 41 -3 109 -8 150 -10 85 -5 129 -20 131 -44 4
+-43 -5 -70 -79 -222 -44 -90 -99 -204 -122 -254 -113 -239 -255 -514 -306
+-591 -19 -28 -61 -80 -94 -116 -80 -88 -134 -112 -255 -112 -99 0 -103 0 -320
+38 -82 15 -163 29 -180 32 -66 11 -268 46 -395 69 -74 13 -148 26 -165 29 -51
+8 -339 58 -360 62 -20 4 -231 40 -290 50 -16 3 -37 7 -45 9 -8 2 -31 7 -50 9
+-19 3 -64 10 -100 17 -36 6 -74 13 -85 14 -11 2 -36 6 -55 10 -203 36 -311 55
+-344 60 -21 3 -41 7 -45 9 -3 2 -33 7 -66 11 -32 3 -62 8 -65 10 -3 1 -27 6
+-54 9 -27 4 -52 9 -55 10 -3 2 -26 7 -51 10 -43 6 -62 9 -120 21 -14 2 -41 7
+-60 10 -19 3 -60 10 -90 15 -30 5 -72 12 -94 16 -21 3 -46 7 -55 9 -81 15
+-103 16 -115 6 -11 -9 -13 -40 -9 -144 6 -164 10 -257 12 -278 1 -18 19 -28
+61 -35 14 -3 57 -11 95 -19 39 -8 81 -16 95 -19 14 -2 106 -21 205 -40 99 -20
+189 -38 200 -40 11 -2 65 -13 120 -25 55 -11 111 -22 125 -25 14 -2 183 -36
+375 -75 193 -39 474 -96 625 -126 151 -31 361 -73 465 -95 105 -21 201 -41
+215 -44 14 -2 36 -7 50 -10 14 -3 36 -8 50 -10 33 -6 370 -74 645 -131 121
+-25 234 -48 250 -51 96 -17 124 -31 127 -65 5 -59 -273 -413 -587 -748 -151
+-161 -220 -219 -330 -274 -134 -67 -273 -73 -440 -19 -78 26 -392 148 -480
+187 -16 7 -122 50 -235 95 -113 45 -281 114 -375 152 -93 38 -237 96 -320 130
+-82 33 -163 66 -180 74 -16 7 -122 49 -235 94 -113 44 -214 85 -225 90 -11 5
+-66 27 -123 49 -100 39 -104 39 -122 21 -15 -15 -17 -29 -14 -82 5 -77 12
+-246 13 -309 1 -43 4 -48 34 -62 17 -8 203 -90 412 -182 209 -91 408 -179 443
+-195 35 -17 65 -30 68 -30 3 0 29 -11 57 -24 29 -13 111 -50 182 -81 72 -31
+144 -63 160 -70 17 -7 53 -23 80 -35 27 -12 63 -27 80 -35 75 -33 276 -120
+450 -194 234 -100 254 -110 273 -139 14 -21 13 -25 -5 -50 -28 -38 -89 -74
+-233 -136 -104 -45 -622 -243 -655 -251 -5 -1 -17 -5 -25 -8 -31 -12 -290 -97
+-403 -132 -94 -29 -129 -36 -172 -32 -111 10 -231 97 -492 357 -122 121 -176
+168 -187 164 -22 -8 -22 -14 -11 -309 15 -430 26 -673 30 -725 2 -25 7 -103
+10 -175 7 -149 12 -227 19 -340 3 -44 8 -125 11 -180 3 -55 8 -131 10 -170 3
+-38 7 -99 10 -135 8 -112 16 -223 20 -275 2 -27 7 -95 10 -150 4 -55 8 -116
+10 -135 5 -49 15 -173 20 -250 9 -112 16 -193 20 -235 2 -22 7 -71 11 -108 5
+-56 9 -67 23 -63 9 3 36 7 61 10 58 8 74 11 265 47 88 17 171 33 185 35 14 3
+86 18 160 35 74 17 144 33 156 35 38 7 377 95 484 125 243 69 756 240 865 289
+11 5 81 34 156 64 75 30 160 66 190 79 30 14 101 46 159 72 145 65 449 218
+585 294 59 34 147 84 170 98 11 7 27 16 35 20 33 16 263 161 390 246 152 102
+308 214 455 330 175 137 215 170 455 382 174 153 549 549 736 775 178 216 544
+725 544 758 0 5 9 17 20 27 11 10 20 22 20 27 0 5 18 36 40 69 22 33 40 63 40
+65 0 3 20 39 45 80 25 40 45 75 45 78 0 2 24 46 53 97 47 84 188 366 230 459
+9 19 33 73 54 120 22 47 65 150 97 230 32 80 62 154 67 165 25 56 192 552 204
+605 2 8 18 62 34 120 26 86 94 353 106 410 2 8 9 38 15 65 6 28 13 57 15 65 6
+23 46 222 51 250 2 14 9 48 14 75 14 74 19 105 26 155 3 25 7 52 9 60 2 8 7
+38 10 65 4 28 8 57 10 65 2 8 7 38 10 65 4 28 8 61 11 75 2 14 6 50 9 80 3 30
+8 71 10 90 2 19 7 62 10 95 3 33 8 76 10 95 3 19 7 76 11 125 3 50 7 106 9
+125 3 36 15 233 21 355 10 207 4 802 -10 1005 -13 175 -17 236 -21 275 -3 22
+-9 87 -15 145 -6 58 -12 116 -14 130 -2 14 -7 50 -11 80 -9 82 -30 220 -51
+340 -2 14 -9 54 -14 89 -6 36 -13 67 -14 70 -2 3 -7 24 -10 46 -41 281 -263
+1055 -383 1335 -8 19 -19 44 -23 55 -91 229 -266 605 -357 765 -11 19 -35 62
+-53 95 -192 347 -477 757 -748 1075 -161 189 -425 463 -612 635 -353 326 -824
+668 -1285 935 -165 96 -523 281 -655 340 -41 18 -97 43 -125 55 -109 50 -151
+67 -293 124 -296 118 -612 226 -897 306 -88 25 -173 50 -190 55 -28 9 -297 76
+-340 85 -11 2 -85 18 -165 35 -80 17 -154 34 -165 36 -11 2 -33 7 -50 9 -16 3
+-64 12 -105 20 -65 12 -194 35 -295 51 -16 2 -55 9 -85 14 -30 5 -77 12 -105
+15 -27 3 -61 8 -75 10 -25 4 -36 6 -185 24 -44 6 -102 13 -130 16 -27 4 -70 8
+-95 10 -76 6 -173 15 -210 20 -19 2 -71 7 -115 10 -44 3 -102 8 -130 10 -27 3
+-104 7 -170 11 -66 3 -149 8 -185 11 -36 3 -1827 7 -3980 9 l-3915 5 0 -155z"/>
+</g>
+</svg>
+<a title="End of summer poster and video presentations.
+" href="/virtual_conference_26/">EDIT AI 2026 Virtual Conference</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/virtual_conference_26/archive.html">Archive</a></li><li class="navigation__item"><a href="/virtual_conference_26/about.html">About</a></li><li class="navigation__item"><a href="/virtual_conference_26/presenters.html">Presenters</a></li><li class="navigation__item"><a href="/virtual_conference_26/mentors.html">EDIT Mentors</a></li><li class="navigation__item"><a href="/virtual_conference_26/seminars.html">Seminars</a></li><li class="navigation__item"><a href="/virtual_conference_26/outcomes.html">Program Outcomes</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet -->
+<article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Sanjay Jacob, Neha Reddy & Amruta Rajeev</h1></header><meta itemprop="headline" content="Sanjay Jacob, Neha Reddy & Amruta Rajeev"><meta itemprop="author" content="Your Name"/><div class="js-article-content"><!-- Tailwind CSS -->
+<!-- <script src="https://cdn.tailwindcss.com/3.0.0"></script> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements@1.0.0-alpha13/dist/css/index.min.css" />
+<script src="https://cdn.tailwindcss.com/3.0.0"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements@1.0.0-alpha13/dist/js/index.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/base.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/components.min.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css"
+/>
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.5/dist/utilities.min.css" />
+
+
+  <div class="bg-white overflow-hidden">
+    <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div class="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-none"></div>
+      <div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-1 lg:gap-8 lg:max-w-none">
+        <div>
+          <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">CRISPR Cas-9 DOORS</h3>
+          <h2 class="text-base text-lime-800 font-semibold tracking-wide uppercase">Sanjay Jacob, Neha Reddy & Amruta Rajeev </h2>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
+        <div class="relative lg:row-start-1 lg:col-start-2">
+          <!-- <svg class="hidden lg:block absolute top-0 right-0 -mt-50 -mr-50" width="808" height="768" fill="none" viewBox="0 200 200 675" aria-hidden="true">
+            <defs>
+              <pattern id="de316486-4a29-4312-bdfc-fbce2132a2c1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="150%" height="675px" fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)" />
+          </svg> -->
+          <div class="relative text-base mx-auto max-w-prose lg:max-w-none">
+            <figure>
+              
+                <div class="aspect-w-12 aspect-h-7 lg:aspect-none" style="min-height: 350px">
+                  <iframe class="rounded-lg shadow-lg object-cover object-center" width="100%" height="500px" frameborder="0" src="/virtual_conference_26/assets/posters/doors.pdf#toolbar=1&navpanes=0"></iframe>
+                  <!-- <img class="rounded-lg shadow-lg object-cover object-center" src="https://edit-ai-program.github.io/virtual_conference_26/assets/images/articles-brief.jpg" alt="profile image" width="1184" height="1376"> -->
+                </div>
+              
+              <figcaption class="mt-3 flex text-sm text-gray-500">
+                <!-- Heroicon name: solid/camera -->
+                <svg class="flex-none w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                </svg>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="mt-8 lg:mt-0">
+          <div class="text-base max-w-prose mx-auto lg:max-w-none">
+            <h3 class="mt-2 text-1xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-2xl">Lay Summary:</h3>
+            <p class="text-lg text-gray-600"></p>
+          </div>
+          <div class="text-base max-w-prose mx-auto lg:max-w-none">
+            <h3 class="mt-2 text-1xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-2xl">Abstract:</h3>
+            <p class="text-lg text-gray-600">CRISPR/Cas-9 is a novel technology that functions in microbial systems by identifying degraded DNA.  Recently, advances in genetic engineering has allowed scientists to use CRISPR-Cas9-based elements as a tool to modify specific strands of DNA in a multitude of living systems, therefore increasing its popularity and usage. However, it is very expensive to synthesize RNA sequences for CRISPR experiences. Buying singular bases and assembling them also requires more time and effort. Given the emerging need for inexpensive and accurate RNA sequences, our team has created an algorithm that uses constraint satisfaction and parallel computing. Utilizing a cost and hamming distance function, the algorithm outputs degenerate sequences.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-1 lg:gap-8 lg:max-w-none">
+        <div>
+          
+          <p align="center">
+          <iframe width="1120" height="630" src="embed/ADD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </p>
+          
+          <br>
+          <br>
+          
+          <!-- <p> -->
+          <h1 class="mt-2 text-1xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-2xl">Q&A:</h1>
+          <!-- </p> -->
+          <br>
+          
+          <!-- <p> -->
+          <article class="prose lg:prose-xl">
+          <p><strong>Bios:</strong> <a href="https://edit-ai-program.github.io/levylab/people/HS_Sanjay_Jacob/">Sanjay Jacob</a>, <a href="https://edit-ai-program.github.io/levylab/people/HS_Neha_Reddy/">Neha Reddy</a>, <a href="https://edit-ai-program.github.io/levylab/people/HS_Amruta_Rajeev/">Amruta Rajeev</a></p>
+
+<p><strong>Program Track:</strong> Advanced Research</p>
+
+<p><strong>GitHub:</strong></p>
+
+<p>https://github.com/sanjayj25
+<em>-Sanjay Jacob</em></p>
+
+<p>amrutaar
+<em>-Amruta Rajeev</em></p>
+
+<p><strong>What was your favorite seminar? Why?</strong></p>
+
+<p>Presentation on Tissue Engineering; honestly one of the most interesting/unique applications of AI/Imaging that I’ve seen in an interdisciplinary field. I wish to explore this later on in my college career.
+<em>-Sanjay Jacob</em></p>
+
+<p>The Google NLP one by Jason Wei! We have the same roots and interests and it was interesting learning more about NLP and its nuances. 
+<em>-Amruta Rajeev</em></p>
+
+<p><strong>If you were to summarize your summer internship experience in one sentence, what would it be?</strong></p>
+
+<p>A really flexible way to conduct research filled with useful resources that really helped with networking
+<em>-Sanjay Jacob</em></p>
+
+<p>Enriching
+<em>-Amruta Rajeev</em></p>
+
+
+          </article>
+          <!-- </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet -->
+</div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Your Name"><meta itemprop="url" content="/virtual_conference_26/"><meta itemprop="description" content="I am an amazing person."><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>EDIT AI 2026 Virtual Conference, © 2021,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+</div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">Search</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text" />
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        Cancel</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
+</div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA || {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script>
+</div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script>
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>
+
